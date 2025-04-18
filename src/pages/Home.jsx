@@ -58,6 +58,14 @@ const Desc = styled.div`
   border-radius: 8px;
 `;
 
+const ButtonGroup = styled.div`
+  display: flex;
+  gap: 10px;
+  & > button[type="button"] {
+    font-size: 2rem;
+  }
+`;
+
 const Home = () => {
   const navigate = useNavigate();
 
@@ -78,7 +86,10 @@ const Home = () => {
           />
         </LogoImg>
         <Desc>MBTI를 기반으로 하는 나랑 가장 잘 맞는 🐈‍⬛CAT 찾기</Desc>
-        <Button onClick={handleClickButton}>테스트 시작하기</Button>
+        <ButtonGroup>
+          <Button onClick={handleClickButton}>테스트 시작하기</Button>
+          <Button variant="warning">카카오톡 공유하기</Button>
+        </ButtonGroup>
       </Contents>
     </Wrapper>
   );
