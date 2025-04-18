@@ -15,15 +15,15 @@ const KakaoShareButton = () => {
   }, []); // 사용자가 처음 페이지 마운트를 하였을때의 목록을 가져와라
 
   // 카카오 API를 활용하기 위한 변수 설정
-  const sharekakao = () => {
+  const sharekakao = ({ data }) => {
+    console.log(data);
+
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
         title: "예비집사 판별기 결과",
-        description:
-          "예비집사님이 고양이를 키운다면 잘 맞는 고양이는 먼치킨입니다.",
-        imageUrl:
-          "https://mud-kage.kakao.com/dn/NTmhS/btqfEUdFAUf/FjKzkZsnoeE4o19klTOVI1/openlink_640x640s.jpg",
+        description: `예비집사님이 고양이를 키운다면 잘 맞는 고양이는 ${data.name}입니다.`,
+        imageUrl: `${url}${data.image}`,
         link: {
           mobileWebUrl: resultURL,
           webUrl: resultURL,
@@ -44,7 +44,7 @@ const KakaoShareButton = () => {
   return (
     <>
       <Button variant="warning" onClick={sharekakao}>
-        카카오톡 공유하기
+        결과 공유하기
       </Button>
     </>
   );

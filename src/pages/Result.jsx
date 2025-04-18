@@ -104,7 +104,7 @@ const Result = () => {
             <Button variant="warning" onClick={handleClickButton}>
               다시 시작하기
             </Button>
-            <KakaoShareButton />
+            <KakaoShareButton data={resultData} />
           </ButtonGroup>
         </Contents>
       </Wrapper>
