@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 // 카카오는 윈도우 객체안에 SDK를 찾아오는 것이기 때문에 함수로 불러와야 한다.
 const { Kakao } = window;
 
-const KakaoShareButton = () => {
+const KakaoShareButton = ({ data }) => {
   const url = "https://mbti-cats.netlify.app/"; // 공유하려는 페이지의 값
   const resultURL = window.location.href; // 공유된사람의 마지막 페이지값
 
@@ -15,9 +15,7 @@ const KakaoShareButton = () => {
   }, []); // 사용자가 처음 페이지 마운트를 하였을때의 목록을 가져와라
 
   // 카카오 API를 활용하기 위한 변수 설정
-  const sharekakao = ({ data }) => {
-    console.log(data);
-
+  const sharekakao = () => {
     Kakao.Share.sendDefault({
       objectType: "feed",
       content: {
@@ -44,7 +42,7 @@ const KakaoShareButton = () => {
   return (
     <>
       <Button variant="warning" onClick={sharekakao}>
-        결과 공유하기
+        KaKao 공유하기
       </Button>
     </>
   );

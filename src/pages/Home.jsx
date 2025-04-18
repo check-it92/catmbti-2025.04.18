@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { Button } from "react-bootstrap";
+import KakaoShareButton from "../components/KakaoShareButton";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -88,7 +89,7 @@ const Home = () => {
         <Desc>MBTI를 기반으로 하는 나랑 가장 잘 맞는 🐈‍⬛CAT 찾기</Desc>
         <ButtonGroup>
           <Button onClick={handleClickButton}>테스트 시작하기</Button>
-          {/* <KakaoShareButton /> */}
+          <KakaoShareButton />
         </ButtonGroup>
       </Contents>
     </Wrapper>
