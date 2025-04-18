@@ -9,6 +9,12 @@ const Container = styled.div`
   height: 100vh;
   background: url(https://i.pinimg.com/originals/47/af/82/47af824852bb6fb9f31e13d3e76a86be.gif)
     center/cover no-repeat;
+
+  @media screen and (max-width: 780px) {
+    width: 100%;
+    height: 80vh;
+    background-position: bottom;
+  }
 `;
 
 const Wrapper = styled.div`
@@ -27,6 +33,11 @@ const Title = styled.div`
   padding: 8px 14px;
   border-radius: 8px;
   margin-bottom: 20px;
+
+  @media screen and (max-width: 780px) {
+    font-size: 2.4rem;
+    padding: 6px 12px;
+  }
 `;
 
 const ButtonGroup = styled.div`
@@ -37,6 +48,17 @@ const ButtonGroup = styled.div`
     height: 100px;
     font-size: 1.8rem;
     border-radius: 8px;
+  }
+
+  @media screen and (max-width: 780px) {
+    flex-direction: column;
+    padding: 10px;
+
+    & > button[type="button"] {
+      width: 100%;
+      height: 100%;
+      font-size: 2.3rem;
+    }
   }
 `;
 
