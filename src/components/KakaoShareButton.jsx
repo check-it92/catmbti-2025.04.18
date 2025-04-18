@@ -8,8 +8,6 @@ const KakaoShareButton = () => {
   const url = "https://mbti-cats.netlify.app/"; // 공유하려는 페이지의 값
   const resultURL = window.location.href; // 공유된사람의 마지막 페이지값
 
-  console.log("TEST : ", url, resultURL);
-
   useEffect(() => {
     Kakao.cleanup(); // 기존(앞단의 캐쉬값)입력 값이 있다면 정리해주는 함수
     Kakao.init("440a5a33bff6aef998285947dcbb1d5d"); // 초기값 입력함수
